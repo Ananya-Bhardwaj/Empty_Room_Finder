@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 
-const classSchema = mongoose.Schema({
+const ClassSchema = mongoose.Schema({
     name: {
         type: String, 
         required: true
@@ -26,7 +26,7 @@ const classSchema = mongoose.Schema({
                 }, 
                 room: {
                     type: mongoose.Schema.Types.ObjectId, 
-                    ref: 'room'
+                    ref: 'Room'
                 }
             }
         ]
@@ -34,4 +34,4 @@ const classSchema = mongoose.Schema({
 }
 )
 
-export default mongoose.model("Class", classSchema);
+export default mongoose.model("Class", ClassSchema);
