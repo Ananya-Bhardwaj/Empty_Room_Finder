@@ -19,17 +19,19 @@ const RoomSchema = new mongoose.Schema({
             required: true,
           },
           batch: {
-            type: String,
-            required: true,
+            type: String
           },
           subject: {
-            type: String,
-            required: true,
+            type: String
           },
           teacher: {
-            type: String,
-            required: true,
+            type: String
           },
+          isEmpty: {
+            type: Boolean, 
+            required: true, 
+            default: true 
+          }
         },
       ],
     },

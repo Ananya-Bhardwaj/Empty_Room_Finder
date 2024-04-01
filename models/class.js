@@ -14,10 +14,7 @@ const classSchema = mongoose.Schema({
             {
                 time: {
                     type: String
-                }, 
-                batch: {
-                    type: String
-                }, 
+                },  
                 subject: {
                     type: String 
                 }, 
