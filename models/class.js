@@ -18,6 +18,9 @@ const ClassSchema = mongoose.Schema({
           subject: {
             type: String,
           },
+          teacher: {
+            type: String,
+          },
           room: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Room",
