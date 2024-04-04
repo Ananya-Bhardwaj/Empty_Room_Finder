@@ -6,17 +6,19 @@ const RoomSchema = new mongoose.Schema({
     required: true,
   },
   day: {
-    type: String, 
-    required: true 
-  }, 
+    type: String,
+    required: true,
+  },
   time: {
     slot: {
-      type: String
-    }, 
+      type: String,
+    },
     class: {
-      type: String 
-    }
-  }
+      type: Object.Schema.Types.ObjectId,
+      required: true,
+      ref: "Class",
+    },
+  },
 });
 
-export default mongoose.model("Room", RoomSchema); 
+export default mongoose.model("Room", RoomSchema);

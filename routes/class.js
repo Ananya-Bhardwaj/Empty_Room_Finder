@@ -1,8 +1,11 @@
 import { importExcel } from "../controllers/class.js";
-import express from 'express'; 
+import express from "express";
+import multer from "multer";
 
 const router = express.Router();
 
-router.post('/', importExcel); 
+const upload = multer({ storage: multer.memoryStorage() });
 
-export default router; 
+router.post("/", upload.single("file"), importExcel);
+
+export default router;

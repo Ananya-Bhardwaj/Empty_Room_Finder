@@ -1,11 +1,15 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import bodyParser from "body-parser";
 
 const app = express();
 dotenv.config();
 
 const PORT = 5500;
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 const connect = async () => {
   try {
@@ -17,10 +21,10 @@ const connect = async () => {
 };
 
 app.listen(PORT, (req, res) => {
-  connect(); 
+  connect();
   console.log(`Server is running on port ${PORT}`);
 });
 
-import classRoute from './routes/class.js'; 
+import classRoute from "./routes/class.js";
 
-app.use('/api/class', classRoute); 
+app.use("/api/class", classRoute);
