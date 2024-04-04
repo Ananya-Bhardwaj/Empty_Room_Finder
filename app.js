@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 const app = express();
 dotenv.config();
 
-PORT = 5500 || process.env.PORT;
+const PORT = 5500;
 
 const connect = async () => {
   try {
@@ -17,5 +17,10 @@ const connect = async () => {
 };
 
 app.listen(PORT, (req, res) => {
+  connect(); 
   console.log(`Server is running on port ${PORT}`);
 });
+
+import classRoute from './routes/class.js'; 
+
+app.use('/api/class', classRoute); 
